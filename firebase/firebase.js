@@ -7,9 +7,7 @@ import {
     updateProfile,
     onAuthStateChanged,
     GoogleAuthProvider,
-    signInWithPopup,
-    RecaptchaVerifier,
-    signInWithPhoneNumber
+    signInWithPopup
 } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
 
 const firebaseConfig = {
@@ -87,27 +85,4 @@ const getCurrentUser = () => {
     });
 };
 
-// ✅ Setup reCAPTCHA only once
-const setupRecaptcha = () => {
-    if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(
-            "recaptcha-container",
-            {
-                size: "normal",
-                callback: (response) => {
-                    console.log("reCAPTCHA solved");
-                },
-                "expired-callback": () => {
-                    console.log("reCAPTCHA expired");
-                },
-            },
-            auth
-        );
-
-        window.recaptchaVerifier.render().then((widgetId) => {
-            window.recaptchaWidgetId = widgetId;
-        });
-    }
-};
-
-export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, setupRecaptcha, signInWithPhoneNumber, auth };
+export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth };

@@ -7,8 +7,8 @@ getCurrentUser().then((user) => {
     }
 }).catch(err => notyfError(err.message));
 
-const signUpHandler = async () => {
-    event.preventDefault();
+const signUpHandler = async (e) => {
+    e.preventDefault();
     const username = document.getElementById("floating_first_name").value.trim();
     const email = document.getElementById("floating_email").value.trim();
     const password = document.getElementById("floating_password").value.trim();

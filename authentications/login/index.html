@@ -181,44 +181,13 @@
                             <img class="w-4 h-4 mr-2" src="../../assets/Icon-Google.png" alt="google logo">
                             Sign In with Google</button>
                     </div>
-                    <div class="mt-4 ">
-                        <button type="button"
-                            class="w-full  border 0 font-medium rounded-sm cursor-pointer px-5 py-2.5 text-sm"
-                            id="phone-signup-btn">
-                            <i class="fa-solid fa-phone mr-2 text-gray-500"></i>
-                            Sign In with Phone</button>
-                    </div>
+
                     <div class="text-center mt-6">
                         Don't have an account? <a href="../signup/index.html" class="underline ml-4">Sign up</a>
                     </div>
                 </form>
             </div>
-            <div class=" flex-1 p-7 hidden relative" id="phone-login-box">
-                <div id="phone-screen" class="">
-                    <button id="back-btn" class="absolute top-0 cursor-pointer hover:text-blue-500"><i
-                            class="fa-solid fa-backward"></i></button>
-                    <h2 class=" text-xl font-semibold text-gray-800 text-center">Phone Verification</h2>
-                    <p class="text-sm text-gray-500 text-center">Enter your phone number to continue</p>
-                    <input type="number" name="phoneNumber" id="phone-number"
-                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none dark: dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder="Enter Phone Number" required />
-                    <button id="send-code-btn"
-                        class="cursor-pointer mt-8 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">Send
-                        Code</button>
-                    <div id="recaptcha-container" class="mt-4 bg-red-500 w-72"></div>
-                </div>
-                <div id="otp-screen" class="hidden">
-                    <h2 class="text-xl font-semibold text-gray-800 text-center">Enter OTP</h2>
-                    <p class="text-sm text-gray-500 text-center">We sent a code to your phone</p>
-                    <input type="number" id="otp-code"
-                        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none dark: dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                        placeholder="Enter Code" required />
-                    <button id="confirm-otp-btn"
-                        class="cursor-pointer mt-8 w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition">
-                        Verify OTP
-                    </button>
-                </div>
-            </div>
+
         </div>
         <!-- Flowbit JS -->
         <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
