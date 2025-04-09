@@ -35,3 +35,27 @@ logoutBtn.addEventListener("click", async () => {
     await logout();
     navLoggedInIcons.classList.add("hidden");
 });
+
+
+// flash sale carousel
+new Swiper(".flash-sale-swiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 16,
+    breakpoints: {
+        640: {
+            slidesPerView: 2.5,
+        },
+        768: {
+            slidesPerView: 3,
+        },
+        1024: {
+            slidesPerView: 4,
+        },
+    },
+    navigation: {
+        nextEl: ".flash-scale-swiper-next-btn",
+        prevEl: ".flash-scale-swiper-prev-btn",
+    },
+    loop: false,
+    grabCursor: true,
+});

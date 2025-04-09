@@ -5,3 +5,10 @@
 * {
     font-family: 'Poppins', sans-serif;
 }
+
+@media only screen and (max-width: 440px) {
+    .swiper-js-btns {
+        position: absolute;
+        right: 10px;
+    }
+}
