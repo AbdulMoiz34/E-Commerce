@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>E-Commerce</title>
-    <link rel="stylesheet" href="style.css">
     <!-- Tailwind  CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="style.css">
     <!-- Flowbite CSS-->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <!-- Fontawesome -->
@@ -18,7 +18,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+    <!-- Google font poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
@@ -185,25 +187,86 @@
                 </div>
             </div>
         </nav>
+        <div class="content container mx-auto px-4 mt-8 md:mt-12 flex gap-12 md:gap-16 flex-col">
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper w-full shadow-2xl rounded-md overflow-hidden bg-white">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <img src="./assets/carousel.png" class="w-full h-72 object-cover" alt="Slide 1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./assets/carousel.png" class="w-full h-72 object-cover" alt="Slide 1">
+                    </div>
+                </div>
+                <!-- Pagination -->
+                <div class="swiper-pagination !bottom-2"></div>
+            </div>
 
-        <div class="content mt-5">
-            <div class="">
-                <!-- Swiper Container -->
-                <div class="swiper mySwiper w-full max-w-4xl rounded-2xl shadow-2xl overflow-hidden bg-white">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <img src="./assets/carousel.png" class="w-full h-72 object-cover" alt="Slide 1">
+            <div>
+                <div>
+                    <div class="title flex gap-4 items-center">
+                        <div class="w-5 h-10 bg-[#DB4444] rounded-sm "></div>
+                        <div class="font-semibold text-[#DB4444]">Today's</div>
+                    </div>
+                </div>
+                <div class="mt-8 flex justify-between md:items-center">
+                    <div class="flex justify-between md:items-end flex-col md:flex-row gap-4 ">
+                        <div class="font-semibold text-2xl sm:text-4xl">
+                            Flash Sales
                         </div>
-                        <div class="swiper-slide">
-                            <img src="./assets/carousel.png" class="w-full h-72 object-cover" alt="Slide 1">
+                        <div class="flex gap-2 sm:gap-4 items-center md:ml-16">
+                            <div class="flex flex-col gap0 w-24 bg-blue-500">Days<br>
+                                <span class="font-bold text-2xl sm:text-4xl">03
+                                    <span class="text-[#DB4444] sm:text-3xl">:</span>
+                                </span>
+                            </div>
+                            <div class="flex flex-col gap-0 w-24 bg-purple-700">Hours <br>
+                                <span class="font-bold text-2xl sm:text-4xl">45
+                                    <span class="text-[#DB4444] sm:text-3xl ">:</span>
+                                </span>
+                            </div>
+                            <div class="flex flex-col gap-0 w-24">Minutes <br>
+                                <span class="font-bold text-2xl sm:text-4xl">23
+                                    <span class="text-[#DB4444] sm:text-3xl ">:</span>
+                                </span>
+                            </div>
+                            <div class="flex flex-col gap-0 w-24">Seconds <br>
+                                <span class="font-bold text-2xl sm:text-4xl">56</span>
+                            </div>
                         </div>
                     </div>
-                    <!-- Pagination -->
-                    <div class="swiper-pagination !bottom-2"></div>
+                    <div class="">
+                        <button
+                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12">
+                            <i class="fa-solid fa-arrow-left flex justify-center items-center"></i>
+                        </button>
+                        <button
+                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12">
+                            <i class="fa-solid fa-arrow-right flex justify-center items-center"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-8">
+                    <div class="flex justify-between gap-4">
+                        <div class="font-semibold text-3xl">
+                            Browse By Category
+                        </div>
+                        <div class="">
+                            <button
+                                class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12">
+                                <i class="fa-solid fa-arrow-left flex justify-center items-center"></i>
+                            </button>
+                            <button
+                                class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12">
+                                <i class="fa-solid fa-arrow-right flex justify-center items-center"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!-- Flowbit JS -->
