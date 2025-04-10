@@ -7,7 +7,6 @@
     <title>E-Commerce</title>
     <!-- Tailwind  CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
     <!-- Flowbite CSS-->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
     <!-- Fontawesome -->
@@ -21,6 +20,7 @@
     <!-- Google font poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -68,7 +68,7 @@
             </div>
         </div>
         <!-- Navbar -->
-        <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-sm sticky top-0 z-10">
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-sm sticky top-0 z-50">
             <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 container">
                 <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
                     <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Exclusive</span>
@@ -95,7 +95,7 @@
                         </div>
                         <input type="text" id="search-navbar"
                             class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="what are you looking for?">
+                            placeholder="Search...">
                     </div>
                     <div class="text-white mx-3 flex items-center gap-3 nav-logged-in-icons hidden">
                         <a href="#"> <i
@@ -159,7 +159,7 @@
                         </div>
                         <input type="text" id="search-navbar"
                             class="block w-full p-2 ps-10 text-sm border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                            placeholder="what are you looking for?">
+                            placeholder="Search...">
                     </div>
                     <ul
                         class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
@@ -202,7 +202,6 @@
                 <!-- Pagination -->
                 <div class="swiper-pagination !bottom-2"></div>
             </div>
-
             <div>
                 <div>
                     <div class="title flex gap-4 items-center">
@@ -236,350 +235,22 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-js-btns">
+                    <div class="flex justify-end gap-2 mb-4 slider-btns ">
                         <button
-                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12 flash-scale-swiper-prev-btn">
+                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-10 h-10 flash-sale-swiper-prev">
                             <i class="fa-solid fa-arrow-left flex justify-center items-center"></i>
                         </button>
                         <button
-                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12 flash-scale-swiper-next-btn">
+                            class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-10 h-10 flash-sale-swiper-next">
                             <i class="fa-solid fa-arrow-right flex justify-center items-center"></i>
                         </button>
                     </div>
                 </div>
-                <div class="swiper flash-sale-swiper mt-8">
-                    <div class="swiper-wrapper">
-                        <!-- Slide 1 -->
-                        <div class="swiper-slide">
-                            <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden">
-                                <div class="bg-gray-200 rounded-md relative group hover:bg-black cursor-pointer">
-                                    <div class="p-3 flex justify-between items-start">
-                                        <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                        <button
-                                            class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <i class="fa-regular fa-heart text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain"
-                                            alt="Gamepad">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add
-                                            To Cart</button>
-                                    </div>
-                                </div>
-                                <div class="p-4 flex flex-col gap-1 flex-grow">
-                                    <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[#DB4444] font-semibold">$120</span>
-                                        <span class="line-through text-gray-500 text-sm">$160</span>
-                                    </div>
-                                    <div class="flex gap-1 text-[#FFAD33]">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                                <div class="bg-gray-200 rounded-md relative">
-                                    <div class="p-3 flex justify-between items-start">
-                                        <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                        <button
-                                            class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <i class="fa-regular fa-heart text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain"
-                                            alt="Gamepad">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add
-                                            To Cart</button>
-                                    </div>
-                                </div>
-                                <div class="p-4 flex flex-col gap-1 flex-grow">
-                                    <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[#DB4444] font-semibold">$120</span>
-                                        <span class="line-through text-gray-500 text-sm">$160</span>
-                                    </div>
-                                    <div class="flex gap-1 text-[#FFAD33]">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                                <div class="bg-gray-200 rounded-md relative">
-                                    <div class="p-3 flex justify-between items-start">
-                                        <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                        <button
-                                            class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <i class="fa-regular fa-heart text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain"
-                                            alt="Gamepad">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add
-                                            To Cart</button>
-                                    </div>
-                                </div>
-                                <div class="p-4 flex flex-col gap-1 flex-grow">
-                                    <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[#DB4444] font-semibold">$120</span>
-                                        <span class="line-through text-gray-500 text-sm">$160</span>
-                                    </div>
-                                    <div class="flex gap-1 text-[#FFAD33]">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                                <div class="bg-gray-200 rounded-md relative">
-                                    <div class="p-3 flex justify-between items-start">
-                                        <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                        <button
-                                            class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <i class="fa-regular fa-heart text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain"
-                                            alt="Gamepad">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add
-                                            To Cart</button>
-                                    </div>
-                                </div>
-                                <div class="p-4 flex flex-col gap-1 flex-grow">
-                                    <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[#DB4444] font-semibold">$120</span>
-                                        <span class="line-through text-gray-500 text-sm">$160</span>
-                                    </div>
-                                    <div class="flex gap-1 text-[#FFAD33]">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                                <div class="bg-gray-200 rounded-md relative">
-                                    <div class="p-3 flex justify-between items-start">
-                                        <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                        <button
-                                            class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <i class="fa-regular fa-heart text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain"
-                                            alt="Gamepad">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add
-                                            To Cart</button>
-                                    </div>
-                                </div>
-                                <div class="p-4 flex flex-col gap-1 flex-grow">
-                                    <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[#DB4444] font-semibold">$120</span>
-                                        <span class="line-through text-gray-500 text-sm">$160</span>
-                                    </div>
-                                    <div class="flex gap-1 text-[#FFAD33]">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="swiper-slide">
-                            <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                                <div class="bg-gray-200 rounded-md relative">
-                                    <div class="p-3 flex justify-between items-start">
-                                        <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                        <button
-                                            class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                            <i class="fa-regular fa-heart text-lg"></i>
-                                        </button>
-                                    </div>
-                                    <div class="flex justify-center">
-                                        <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain"
-                                            alt="Gamepad">
-                                    </div>
-                                    <div
-                                        class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <button
-                                            class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add
-                                            To Cart</button>
-                                    </div>
-                                </div>
-                                <div class="p-4 flex flex-col gap-1 flex-grow">
-                                    <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                                    <div class="flex items-center gap-2">
-                                        <span class="text-[#DB4444] font-semibold">$120</span>
-                                        <span class="line-through text-gray-500 text-sm">$160</span>
-                                    </div>
-                                    <div class="flex gap-1 text-[#FFAD33]">
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8 z-0">
-                    <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                        <div class="bg-gray-200 rounded-md relative">
-                            <div class="p-3 flex justify-between items-start">
-                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                <button
-                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </button>
-                            </div>
-                            <div class="flex justify-center">
-                                <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain" alt="flash sale">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
-                                    Cart</button>
-                            </div>
-                        </div>
-
-                        <div class="p-4 flex flex-col gap-1 flex-grow">
-                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[#DB4444] font-semibold">$120</span>
-                                <span class="line-through text-gray-500 text-sm">$160</span>
-                            </div>
-                            <div class="flex gap-1 text-[#FFAD33]">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                        <div class="bg-gray-200 rounded-md relative">
-                            <div class="p-3 flex justify-between items-start">
-                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                <button
-                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </button>
-                            </div>
-                            <div class="flex justify-center">
-                                <img src="./assets/keyboard.png" class="h-40 object-contain" alt="flash sale">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
-                                    Cart</button>
-                            </div>
-                        </div>
-
-                        <div class="p-4 flex flex-col gap-1 flex-grow">
-                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[#DB4444] font-semibold">$120</span>
-                                <span class="line-through text-gray-500 text-sm">$160</span>
-                            </div>
-                            <div class="flex gap-1 text-[#FFAD33]">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                        <div class="bg-gray-200 rounded-md relative">
-                            <div class="p-3 flex justify-between items-start">
-                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
-                                <button
-                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
-                                    <i class="fa-regular fa-heart text-lg"></i>
-                                </button>
-                            </div>
-                            <div class="flex justify-center">
-                                <img src="./assets/led.png" class="h-40 object-contain" alt="flash sale">
-                            </div>
-                            <div
-                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
-                                    Cart</button>
-                            </div>
-                        </div>
-
-                        <div class="p-4 flex flex-col gap-1 flex-grow">
-                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
-                            <div class="flex items-center gap-2">
-                                <span class="text-[#DB4444] font-semibold">$120</span>
-                                <span class="line-through text-gray-500 text-sm">$160</span>
-                            </div>
-                            <div class="flex gap-1 text-[#FFAD33]">
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                                <i class="fa-solid fa-star"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                        <div class="bg-gray-200 rounded-md relative">
+                <!-- Today's Products Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+                    <!-- Product Card 1 -->
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
                             <div class="p-3 flex justify-between items-start">
                                 <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
                                 <button
@@ -612,8 +283,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                        <div class="bg-gray-200 rounded-md relative">
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
                             <div class="p-3 flex justify-between items-start">
                                 <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
                                 <button
@@ -646,8 +317,195 @@
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col h-full bg-white rounded-lg overflow-hidden group">
-                        <div class="bg-gray-200 rounded-md relative">
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/keyboard.png" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/led.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-4">
+                    <button
+                        class="cursor-pointer bg-[#DB4444] hover:bg-[#ba3838] rounded-sm text-xs text-white w-40 py-3">View
+                        All
+                        Products</button>
+                </div>
+                <div class="bg-black opacity-15 h-[.5px] w-full mt-8"></div>
+            </div>
+            <div class="my-8">
+                <div class="mb-4">
+                    <div class="title flex gap-4 items-center">
+                        <div class="w-5 h-10 bg-[#DB4444] rounded-sm "></div>
+                        <div class="font-semibold text-[#DB4444]">Catgeories</div>
+                    </div>
+                </div>
+                <div class="flex justify-between gap-4">
+                    <div class="font-semibold text-xl">
+                        Browse By Category
+                    </div>
+                    <div class="flex gap-1">
+                        <button class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full w-10 h-10"
+                            id="prevBtn">
+                            <i class="fa-solid fa-arrow-left flex justify-center items-center"></i>
+                        </button>
+                        <button class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full w-10 h-10"
+                            id="nextBtn">
+                            <i class="fa-solid fa-arrow-right flex justify-center items-center"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="swiper category-swiper mt-6">
+                    <div class="swiper-wrapper py-4">
+                        <!-- Slides -->
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-mobile-phone mb-2 text-3xl"></i>
+                            <span>Phones</span>
+                        </div>
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-computer mb-2 text-3xl"></i>
+                            <span>Computer</span>
+                        </div>
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-stopwatch mb-2 text-3xl"></i>
+                            <span>SmartWatch</span>
+                        </div>
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-camera mb-2 text-3xl"></i>
+                            <span>Camera</span>
+                        </div>
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-headphones mb-2 text-3xl"></i>
+                            <span>Headphones</span>
+                        </div>
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-gamepad mb-2 text-3xl"></i>
+                            <span>Gaming</span>
+                        </div>
+                        <div class="swiper-slide category-slide hover:bg-[#DB4444] hover:text-white">
+                            <i class="fa-solid fa-laptop mb-2 text-3xl"></i>
+                            <span>Laptops</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black opacity-15 h-[.5px] w-full mt-8"></div>
+            </div>
+            <div>
+                <div class="mb-4">
+                    <div class="title flex gap-4 items-center">
+                        <div class="w-5 h-10 bg-[#DB4444] rounded-sm "></div>
+                        <div class="font-semibold text-[#DB4444]">This Month</div>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="font-semibold text-xl">
+                        Best Selling Products
+                    </div>
+                    <div>
+                        <button
+                            class="cursor-pointer bg-[#DB4444] hover:bg-[#ba3838] rounded-sm text-xs text-white w-32 py-3">View
+                            All</button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+                    <!-- Product Card 1 -->
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/chair.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
                             <div class="p-3 flex justify-between items-start">
                                 <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
                                 <button
@@ -680,27 +538,602 @@
                             </div>
                         </div>
                     </div>
-                </div> -->
-                <div class="mt-8">
-                    <div class="flex justify-between gap-4">
-                        <div class="font-semibold text-3xl">
-                            Browse By Category
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/keyboard.png" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
                         </div>
-                        <div class="">
-                            <button
-                                class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12">
-                                <i class="fa-solid fa-arrow-left flex justify-center items-center"></i>
-                            </button>
-                            <button
-                                class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full p-3 w-12 h-12">
-                                <i class="fa-solid fa-arrow-right flex justify-center items-center"></i>
-                            </button>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/led.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="bg-black py-10 px-4">
+                <div
+                    class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10 bg-gradient-to-r from-orange-700 via-purple-800 to-green-800 rounded-xl p-6">
+
+                    <!-- Text + Countdown + CTA -->
+                    <div class="text-white flex-1 flex flex-col gap-6">
+                        <p class="text-[#00FF66] font-semibold tracking-wide uppercase">Categories</p>
+
+                        <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight">Enhance your Music
+                            Experience</h2>
+
+                        <!-- Countdown -->
+                        <div class="flex flex-wrap gap-4">
+                            <div
+                                class="bg-white text-black w-18 h-18 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center shadow-md">
+                                <span class="text-xl font-bold">23</span>
+                                <span class="text-xs">Hours</span>
+                            </div>
+                            <div
+                                class="bg-white text-black w-18 h-18 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center shadow-md">
+                                <span class="text-xl font-bold">05</span>
+                                <span class="text-xs">Days</span>
+                            </div>
+                            <div
+                                class="bg-white text-black w-18 h-18 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center shadow-md">
+                                <span class="text-xl font-bold">59</span>
+                                <span class="text-xs">Minutes</span>
+                            </div>
+                            <div
+                                class="bg-white text-black w-18 h-18 sm:w-20 sm:h-20 rounded-full flex flex-col items-center justify-center shadow-md">
+                                <span class="text-xl font-bold">25</span>
+                                <span class="text-xs">Seconds</span>
+                            </div>
+                        </div>
+
+                        <!-- CTA Button -->
+                        <button
+                            class="cursor-pointer w-36 bg-[#00FF66] hover:bg-[#3be67f] text-white text-sm font-semibold py-3 rounded-md transition-all duration-300">
+                            Buy Now
+                        </button>
+                    </div>
+
+                    <!-- Image -->
+                    <div class="flex-1 flex justify-center">
+                        <img src="./assets/speaker.png" alt="Speaker" class="w-64 md:w-80 lg:w-96 object-contain">
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="mb-4">
+                    <div class="title flex gap-4 items-center">
+                        <div class="w-5 h-10 bg-[#DB4444] rounded-sm "></div>
+                        <div class="font-semibold text-[#DB4444]">Our Products</div>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="font-semibold text-2xl">Explore Our Products</div>
+                    <div class="flex gap-1">
+                        <button class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full w-10 h-10">
+                            <i class="fa-solid fa-arrow-left flex justify-center items-center"></i>
+                        </button>
+                        <button class="cursor-pointer bg-gray-100 hover:bg-gray-200 transition rounded-full w-10 h-10">
+                            <i class="fa-solid fa-arrow-right flex justify-center items-center"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-8">
+                    <!-- Product Card 1 -->
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/chair.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/chair.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/chair.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/chair.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/chair.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/remoteOfVideoGame.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/keyboard.png" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col bg-white rounded-lg overflow-hidden group">
+                        <div class="bg-gray-200 rounded-md relative h-64">
+                            <div class="p-3 flex justify-between items-start">
+                                <span class="bg-[#DB4444] text-white text-sm px-2 py-1 rounded-md">-40%</span>
+                                <button
+                                    class="cursor-pointer bg-white hover:text-red-600 rounded-full w-9 h-9 flex justify-center items-center">
+                                    <i class="fa-regular fa-heart text-lg"></i>
+                                </button>
+                            </div>
+                            <div class="flex justify-center">
+                                <img src="./assets/led.png" class="h-40 object-contain" alt="flash sale">
+                            </div>
+                            <div
+                                class="absolute bottom-0 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <button class="cursor-pointer bg-black hover:bg-gray-800 text-white w-full py-3">Add To
+                                    Cart</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 flex flex-col gap-1 flex-grow">
+                            <p class="text-base font-semibold">HAVIT HV-G92 Gamepad</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-[#DB4444] font-semibold">$120</span>
+                                <span class="line-through text-gray-500 text-sm">$160</span>
+                            </div>
+                            <div class="flex gap-1 text-[#FFAD33]">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-4">
+                    <button
+                        class="cursor-pointer bg-[#DB4444] hover:bg-[#ba3838] rounded-sm text-xs text-white w-40 py-3">View
+                        All
+                        Products</button>
+                </div>
+            </div>
+            <div>
+                <div class="mb-4">
+                    <div class="title flex gap-4 items-center">
+                        <div class="w-5 h-10 bg-[#DB4444] rounded-sm "></div>
+                        <div class="font-semibold text-[#DB4444]">Featured</div>
+                    </div>
+                </div>
+                <div class="flex justify-between">
+                    <div class="font-semibold text-2xl">New Arrival</div>
+                </div>
+                <div class="px-4 py-10 ">
+                    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                        <!-- PlayStation 5 Card -->
+                        <div class="relative h-80 md:h-auto bg-black">
+                            <img src="./assets/ps5.png" alt="PlayStation 5"
+                                class="w-full h-full object-cover rounded-xl">
+                            <div class="absolute bottom-4 left-4 text-white">
+                                <h3 class="text-xl font-semibold">PlayStation 5</h3>
+                                <p class="text-sm mb-2">Black and White version of the PS5 coming out on sale.</p>
+                                <a href="#"
+                                    class="inline-block text-white text-sm font-medium px-4 py-2 rounded hover:underline shadow-sm shadow-gray-100 hover:shadow-none">Shop
+                                    Now</a>
+                            </div>
+                        </div>
+
+                        <!-- Right Side Grid (2x2) -->
+                        <div class="grid grid-cols-1 gap-6">
+                            <!-- Women Collection -->
+                            <div class="relative col-span-1 sm:col-span-2 h-48 bg-black w-full">
+                                <img src="./assets/women.png" alt="Women's Collections"
+                                    class="w-full h-full object-cover rounded-xl">
+                                <div class="absolute bottom-4 left-4 text-white">
+                                    <h3 class="text-lg sm:text-xl font-semibold">Women's Collections</h3>
+                                    <p class="text-xs sm:text-sm mb-1">Featured woman collections that give you another
+                                        vibe.</p>
+                                    <a href="#"
+                                        class="inline-block text-white text-sm font-medium px-4 py-2 rounded hover:underline shadow-sm shadow-gray-100 hover:shadow-none">Shop
+                                        Now</a>
+                                </div>
+                            </div>
+
+                            <di class="grid grid-cols-2 gap-6">
+                                <!-- Speakers -->
+                                <div class="relative h-full bg-black">
+                                    <img src="./assets/echospeakers.png" alt="Speakers"
+                                        class="w-full h-full object-cover rounded-xl">
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <h3 class="text-lg font-semibold">Speakers</h3>
+                                        <p class="text-xs mb-1">Amazon wireless speakers</p>
+                                        <a href="#"
+                                            class="inline-block text-white text-sm font-medium px-4 py-2 rounded hover:underline shadow-sm shadow-gray-100 hover:shadow-none">Shop
+                                            Now</a>
+                                    </div>
+                                </div>
+
+                                <!-- Perfume -->
+                                <div class="relative h-full bg-black">
+                                    <img src="./assets/perfumes.png" alt="Perfume"
+                                        class="w-full h-full object-cover rounded-xl">
+                                    <div class="absolute bottom-4 left-4 text-white">
+                                        <h3 class="text-lg font-semibold">Perfume</h3>
+                                        <p class="text-xs mb-1">GUCCI INTENSE OUD EDP</p>
+                                        <a href="#"
+                                            class="inline-block text-white text-sm font-medium px-4 py-2 rounded hover:underline shadow-sm shadow-gray-100 hover:shadow-none">Shop
+                                            Now</a>
+                                    </div>
+                                </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div
+                    class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-16 h-16 bg-black border-[#c1c0c1] border-[10px] rounded-full flex items-center justify-center shadow-lg relative z-10">
+                            <img src="./assets/icon-delivery.png" alt="Delivery Icon" class="w-6 h-6 text-white">
+                        </div>
+                        <h3 class="mt-4 text-md font-bold uppercase">Free and Fast Delivery</h3>
+                        <p class="text-sm text-gray-600 mt-1">Free delivery for all orders over $140</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-16 h-16 bg-black border-[#c1c0c1] border-[10px]  rounded-full flex items-center justify-center shadow-lg relative z-10">
+                            <img src="./assets/Icon-Customer service.png" alt="Customer Support Icon"
+                                class="w-6 h-6 text-white">
+                        </div>
+                        <h3 class="mt-4 text-md font-bold uppercase">24/7 Customer Service</h3>
+                        <p class="text-sm text-gray-600 mt-1">Friendly 24/7 customer support</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-16 h-16 bg-black border-[#c1c0c1] border-[10px] rounded-full flex items-center justify-center shadow-lg relative z-10">
+                            <img src="./assets/Icon-secure.png" alt="Money Back Icon" class="w-6 h-6 text-white">
+                        </div>
+                        <h3 class="mt-4 text-md font-bold uppercase">Money Back Guarantee</h3>
+                        <p class="text-sm text-gray-600 mt-1">We return money within 30 days</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+        <footer class="bg-black text-white px-6 py-12 font-sans mt-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <!-- Exclusive -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Exclusive</h2>
+                    <p class="mb-2 text-sm font-medium">Subscribe</p>
+                    <p class="text-xs mb-4">Get 10% off your first order</p>
+                    <form class="flex items-center border border-gray-500 rounded overflow-hidden">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-3 py-2 text-sm bg-transparent border-none outline-none text-white" />
+                        <button class="border-none cursor-pointer text-white px-3 py-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 12h14m-7-7l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Support</h2>
+                    <p class="text-xs leading-6">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                    <p class="text-xs mt-2">exclusive@gmail.com</p>
+                    <p class="text-xs mt-2">+88015-88888-9999</p>
+                </div>
+
+                <!-- Account -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Account</h2>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:underline">My Account</a></li>
+                        <li><a href="#" class="hover:underline">Login / Register</a></li>
+                        <li><a href="#" class="hover:underline">Cart</a></li>
+                        <li><a href="#" class="hover:underline">Wishlist</a></li>
+                        <li><a href="#" class="hover:underline">Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Link -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Quick Link</h2>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms Of Use</a></li>
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Download App</h2>
+                    <p class="text-xs mb-2">Save $3 with App New User Only</p>
+                    <div class="flex gap-3 items-start">
+                        <img src="./assets/Qr Code.png" alt="QR Code" class="w-16 h-16 object-cover">
+                        <div class="flex flex-col gap-2">
+                            <img src="./assets/GooglePlay.png" alt="Google Play" class="w-24">
+                            <img src="./assets/AppStore.png" alt="App Store" class="w-24">
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mt-6 text-lg">
+                        <a href="#"><i class="fab fa-facebook-f hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-twitter hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-instagram hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in hover:text-gray-400"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+                © Copyright Rimel 2022. All rights reserved
+            </div>
+        </footer>
     </div>
 
     <!-- Flowbit JS -->

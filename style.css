@@ -1,13 +1,54 @@
-.swiper {
-    z-index: -1 !important;
+/* Main swiper (hero section) */
+.mySwiper {
+    z-index: 0 !important;
+}
+
+/* Flash sale swiper */
+.flash-sale-swiper {
+    overflow: visible !important;
+    padding: 10px 0;
+    z-index: 0 !important;
 }
 
 * {
     font-family: 'Poppins', sans-serif;
 }
 
+
+.category-slide {
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    text-align: center;
+    padding: 1.3rem 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.category-slide svg {
+    width: 26px;
+    height: 26px;
+    margin: 0 auto 0.5rem;
+    stroke-width: 1.5;
+}
+
+.category-active {
+    background-color: #ef4444;
+    color: white;
+    border-color: transparent;
+}
+
+.category-active svg {
+    stroke: white;
+}
+
 @media only screen and (max-width: 440px) {
-    .swiper-js-btns {
+    .slider-btns {
         position: absolute;
         right: 10px;
     }

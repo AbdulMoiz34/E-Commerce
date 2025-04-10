@@ -11,7 +11,7 @@ const swiper = new Swiper(".mySwiper", {
     },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true,
+        clickable: false,
     },
     effect: "coverflow",
     coverflowEffect: {
@@ -27,7 +27,6 @@ getCurrentUser().then((user) => {
     if (user) {
         navLoggedInIcons.classList.remove("hidden");
     }
-    console.log(user);
 }).catch(err => notyfError(err.message));
 
 logoutBtn.addEventListener("click", async () => {
@@ -37,25 +36,33 @@ logoutBtn.addEventListener("click", async () => {
 });
 
 
-// flash sale carousel
-new Swiper(".flash-sale-swiper", {
-    slidesPerView: 1.5,
-    spaceBetween: 16,
+// Flash Sale Swiper
+
+// category slider
+const categorySwiper = new Swiper('.category-swiper', {
+    slidesPerView: 5,
+    spaceBetween: 20,
     breakpoints: {
-        640: {
-            slidesPerView: 2.5,
-        },
-        768: {
-            slidesPerView: 3,
-        },
-        1024: {
-            slidesPerView: 4,
-        },
-    },
-    navigation: {
-        nextEl: ".flash-scale-swiper-next-btn",
-        prevEl: ".flash-scale-swiper-prev-btn",
-    },
-    loop: false,
-    grabCursor: true,
+        320: { slidesPerView: 2 },   // Mobile
+        640: { slidesPerView: 3 },   // Small screens
+        768: { slidesPerView: 4 },   // Medium screens
+        1024: { slidesPerView: 5 }   // Large screens and up
+    }
+});
+
+// Custom Navigation
+document.getElementById('prevBtn').addEventListener('click', () => {
+    categorySwiper.slidePrev();
+});
+document.getElementById('nextBtn').addEventListener('click', () => {
+    categorySwiper.slideNext();
+});
+
+
+// Add to cart functionality
+const addToCartButtons = document.querySelectorAll('.abc button');
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        notyfInfo("Product added to cart");
+    });
 });
