@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce</title>
+    <!-- Tailwind  CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Flowbite CSS-->
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Notyf CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Google font poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <nav class="bg-white border-gray-200 dark:bg-gray-900 shadow-sm sticky top-0 z-30">
+            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4 container">
+                <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Exclusive</span>
+                </a>
+                <div class="flex md:order-2">
+                    <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"
+                        aria-expanded="false"
+                        class="md:hidden text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 me-1">
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                        <span class="sr-only">Search</span>
+                    </button>
+                    <div class="relative hidden md:block">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                            <span class="sr-only">Search icon</span>
+                        </div>
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+                    <div class="text-white mx-3 flex items-center gap-3 nav-logged-in-icons hidden">
+                        <a href="#"> <i
+                                class="fa-regular fa-heart hover:text-red-600 transition dark:text-white text-black"></i></a>
+                        <a href=""> <i
+                                class="fa-solid fa-cart-shopping bg-transparent hover:text-blue-500 dark:text-white text-black"></i>
+                        </a>
+                        <!-- DropDown -->
+                        <div class="relative inline-block text-left z-30">
+                            <!-- Trigger Button -->
+                            <button id="dropdownUserButton" data-dropdown-toggle="dropdownUser"
+                                class="bg-transparent cursor-pointer" type="button">
+                                <i
+                                    class="fa-regular fa-user hover:bg-orange-600 rounded-full p-2 text-xl text-gray-500 hover:text-white"></i>
+                            </button>
+                            <!-- Dropdown Menu -->
+                            <div id="dropdownUser"
+                                class="z-50 hidden w-64 rounded-xl shadow-lg bg-black text-white p-4 space-y-4 font-medium text-lg backdrop-blur-md">
+                                <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
+                                    <i class="fas fa-user text-xl"></i>
+                                    <span>Manage My Account</span>
+                                </div>
+                                <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
+                                    <i class="fas fa-bag-shopping text-xl"></i>
+                                    <span>My Order</span>
+                                </div>
+                                <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
+                                    <i class="fas fa-xmark-circle text-xl"></i>
+                                    <span>My Cancellations</span>
+                                </div>
+                                <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
+                                    <i class="fas fa-star text-xl"></i>
+                                    <span>My Reviews</span>
+                                </div>
+                                <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer" id="logout-btn">
+                                    <i class="fas fa-right-from-bracket text-xl"></i>
+                                    <span>Logout</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button data-collapse-toggle="navbar-search" type="button"
+                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+                        aria-controls="navbar-search" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
+                            viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-search">
+                    <div class="relative mt-3 md:hidden">
+                        <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                            <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                            </svg>
+                        </div>
+                        <input type="text" id="search-navbar"
+                            class="block w-full p-2 ps-10 text-sm border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder="Search...">
+                    </div>
+                    <ul
+                        class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-3 dark:text-white text-black rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                aria-current="page">Home</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-3 dark:text-white text-black rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                aria-current="page">Contact</a>
+                        </li>
+                        <li>
+                            <a href="#"
+                                class="block py-2 px-3 dark:text-white text-black rounded-sm md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                                aria-current="page">About</a>
+                        </li>
+                        <li>
+                            <a href="./authentications/login/index.html"
+                                class="block py-2 px-3 rounded-sm md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white text-black  md:dark:hover:bg-transparent dark:border-gray-700">Sign
+                                In</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container mx-auto px-4  flex flex-col">
+            <div class="mt-8 ">
+                <a href="/index.html" class="text-gray-400">Home </a>/
+                <a href="" class=""> Cart</a>
+            </div>
+            <div class="products text-sm">
+                <div>
+                    <div class="flex flex-col gap-8">
+                        <div class="shadow-sm py-4 px-6 flex justify-between my-5">
+                            <p class="flex-1 text-center">Product</p>
+                            <p class="flex-1 text-center">Price</p>
+                            <p class="flex-1 text-center">Quantity</p>
+                            <p class="flex-1 text-center">Subtotal</p>
+                        </div>
+                        <div class="">
+                            <!-- Item 1 -->
+                            <div class="shadow-sm py-4 px-6 flex justify-between items-center mt-5">
+                                <div class="flex-1 text-center flex items-center gap-2">
+                                    <img src="../assets/g27cq4-500x500 1 (1).png" alt="">
+                                    <p>LCD Monitor</p>
+                                </div>
+                                <p class="flex-1 text-center">$650</p>
+                                <div class="flex-1 flex justify-center">
+                                    <div class="relative flex items-center max-w-[8rem]">
+                                        <button type="button" data-input-counter-decrement="quantity-1"
+                                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
+                                            <svg class="w-3 h-3 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 18 2">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                                            </svg>
+                                        </button>
+                                        <input type="text" id="quantity-1" data-input-counter data-input-counter-min="1"
+                                            data-input-counter-max="50"
+                                            class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm block w-full py-2.5"
+                                            value="5" required />
+                                        <button type="button" data-input-counter-increment="quantity-1"
+                                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
+                                            <svg class="w-3 h-3 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 18 18">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="flex-1 text-center">$650</p>
+                            </div>
+
+                            <!-- Item 2 -->
+                            <div class="shadow-sm py-4 px-6 flex justify-between items-center mt-5">
+                                <div class="flex-1 text-center flex items-center gap-2">
+                                    <img src="../assets/g27cq4-500x500 1 (1).png" alt="">
+                                    <p>LCD Monitor</p>
+                                </div>
+                                <p class="flex-1 text-center">$650</p>
+                                <div class="flex-1 flex justify-center">
+                                    <div class="relative flex items-center max-w-[8rem]">
+                                        <button type="button" data-input-counter-decrement="quantity-2"
+                                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
+                                            <svg class="w-3 h-3 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 18 2">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                                            </svg>
+                                        </button>
+                                        <input type="text" id="quantity-2" data-input-counter data-input-counter-min="1"
+                                            data-input-counter-max="50"
+                                            class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+                                            value="5" required />
+                                        <button type="button" data-input-counter-increment="quantity-2"
+                                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
+                                            <svg class="w-3 h-3 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 18 18">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="flex-1 text-center">$650</p>
+                            </div>
+
+                            <!-- Item 3 -->
+                            <div class="shadow-sm py-4 px-6 flex justify-between items-center mt-5">
+                                <div class="flex-1 text-center flex items-center gap-2">
+                                    <img src="../assets/g27cq4-500x500 1 (1).png" alt="">
+                                    <p>LCD Monitor</p>
+                                </div>
+                                <p class="flex-1 text-center">$650</p>
+                                <div class="flex-1 flex justify-center">
+                                    <div class="relative flex items-center max-w-[8rem]">
+                                        <button type="button" data-input-counter-decrement="quantity-3"
+                                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
+                                            <svg class="w-3 h-3 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 18 2">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" d="M1 1h16" />
+                                            </svg>
+                                        </button>
+                                        <input type="text" id="quantity-3" data-input-counter data-input-counter-min="1"
+                                            data-input-counter-max="50"
+                                            class="bg-gray-50 border-x-0 border-gray-300 h-11 text-center text-gray-900 text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+                                            value="5" required />
+                                        <button type="button" data-input-counter-increment="quantity-3"
+                                            class="bg-gray-100 hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none">
+                                            <svg class="w-3 h-3 text-gray-900" xmlns="http://www.w3.org/2000/svg"
+                                                fill="none" viewBox="0 0 18 18">
+                                                <path stroke="currentColor" stroke-linecap="round"
+                                                    stroke-linejoin="round" stroke-width="2" d="M9 1v16M1 9h16" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                                <p class="flex-1 text-center">$650</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between py-4 px-6">
+                        </div>
+                    </div>
+                    <div class="flex justify-between mb-4">
+                        <button class="cursor-pointer border px-6 py-2 rounded-sm font-semibold">Return to Shop</button>
+                        <button class="cursor-pointer border px-6 py-2 rounded-sm font-semibold">Update Cart</button>
+                    </div>
+                </div>
+
+                <div class=" flex justify-between">
+                    <div class="">
+                        <input type="text" name="Coupon Code." placeholder="Coupon Code" id="" class="rounded mr-2">
+                        <button
+                            class="cursor-pointer bg-[#DB4444] hover:bg-[#ba3838] text-white px-4 rounded py-3">Apply
+                            Coupon</button>
+                    </div>
+                    <div class="bg-white border rounded-md p-6 w-80 shadow-sm">
+                        <h2 class="text-lg font-semibold mb-4">Cart Total</h2>
+
+                        <div class="flex justify-between mb-2">
+                            <span>Subtotal:</span>
+                            <span>$1750</span>
+                        </div>
+                        <hr />
+                        <div class="flex justify-between my-2">
+                            <span>Shipping:</span>
+                            <span>Free</span>
+                        </div>
+                        <hr />
+                        <div class="flex justify-between mt-2 font-semibold">
+                            <span>Total:</span>
+                            <span>$1750</span>
+                        </div>
+
+                        <button
+                            class="cursor-pointer mt-4 w-full bg-[#DB4444] hover:bg-[#ba3838] text-white py-2 rounded">
+                            Proceed to checkout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="bg-black text-white px-6 py-12 font-sans mt-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <!-- Exclusive -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Exclusive</h2>
+                    <p class="mb-2 text-sm font-medium">Subscribe</p>
+                    <p class="text-xs mb-4">Get 10% off your first order</p>
+                    <form class="flex items-center border border-gray-500 rounded overflow-hidden">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-3 py-2 text-sm bg-transparent border-none outline-none text-white" />
+                        <button class="border-none cursor-pointer text-white px-3 py-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 12h14m-7-7l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Support</h2>
+                    <p class="text-xs leading-6">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                    <p class="text-xs mt-2">exclusive@gmail.com</p>
+                    <p class="text-xs mt-2">+88015-88888-9999</p>
+                </div>
+
+                <!-- Account -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Account</h2>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:underline">My Account</a></li>
+                        <li><a href="#" class="hover:underline">Login / Register</a></li>
+                        <li><a href="#" class="hover:underline">Cart</a></li>
+                        <li><a href="#" class="hover:underline">Wishlist</a></li>
+                        <li><a href="#" class="hover:underline">Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Link -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Quick Link</h2>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms Of Use</a></li>
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Download App</h2>
+                    <p class="text-xs mb-2">Save $3 with App New User Only</p>
+                    <div class="flex gap-3 items-start">
+                        <img src="../assets/Qr Code.png" alt="QR Code" class="w-16 h-16 object-cover">
+                        <div class="flex flex-col gap-2">
+                            <img src="../assets/GooglePlay.png" alt="Google Play" class="w-24">
+                            <img src="../assets/AppStore.png" alt="App Store" class="w-24">
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mt-6 text-lg">
+                        <a href="#"><i class="fab fa-facebook-f hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-twitter hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-instagram hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in hover:text-gray-400"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+                © Made by <a href="https://github.com/abdulmoiz34" class="text-white hover:underline">Abdul Moiz</a>
+            </div>
+        </footer>
+    </main>
+    <!-- Flowbit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- Notyf JS-->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <!-- Firebase -->
+    <script src="firebase/firebase.js" type="module"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="app.js" type="module"></script>
+</body>
+
+</html>

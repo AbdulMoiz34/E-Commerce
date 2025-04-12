@@ -1,4 +1,4 @@
-import { getCurrentUser, logout } from "./firebase/firebase.js";
+import { getCurrentUser, logout, getSalesProducts } from "./firebase/firebase.js";
 import { notyfError, notyfInfo } from "./notyf/app.js";
 
 const navLoggedInIcons = document.querySelector(".nav-logged-in-icons");
@@ -58,6 +58,18 @@ document.getElementById('nextBtn').addEventListener('click', () => {
     categorySwiper.slideNext();
 });
 
+const salesProducts = async () => {
+    try {
+        document.querySelector(".sales-products-loader").classList.remove("hidden");
+        const products = await getSalesProducts();
+        console.log(products);
+        document.querySelector(".sales-products-loader").classList.add("hidden");
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+salesProducts();
 
 // Add to cart functionality
 const addToCartButtons = document.querySelectorAll('.abc button');

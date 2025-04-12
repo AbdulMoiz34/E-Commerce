@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -24,6 +25,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
+const db = getFirestore(app);
 
 // sign up functionality
 const signUp = async (name, email, password) => {
@@ -85,4 +87,32 @@ const getCurrentUser = () => {
     });
 };
 
-export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth };
+// Function to get all products from Firestore
+const getAllProducts = async () => {
+    try {
+        const querySnapshot = await getDocs(collection(db, "products"));
+        const products = [];
+        querySnapshot.forEach((doc) => {
+            products.push(doc.data());
+        });
+        return products;
+    } catch (error) {
+        console.error("Error getting products: ", error);
+        return [];
+    }
+};
+
+const getSalesProducts = async () => {
+    try {
+        const querySnapshot = await getDocs(collection(db, "sales"));
+        const products = [];
+        querySnapshot.forEach((doc) => {
+            products.push(doc.data());
+        });
+        return products;;
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getSalesProducts };
