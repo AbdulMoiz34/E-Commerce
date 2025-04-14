@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About</title>
     <!-- Tailwind  CSS -->
-    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Google font poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
@@ -17,6 +17,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Flowbite CSS-->
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+    <!-- SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <!-- Notyf CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
 
 </head>
 
@@ -54,7 +58,7 @@
                     <div class="text-white mx-3 flex items-center gap-3 nav-logged-in-icons hidden">
                         <a href="#"> <i
                                 class="fa-regular fa-heart hover:text-red-600 transition dark:text-white text-black"></i></a>
-                        <a href=""> <i
+                        <a href="../cart/index.html"> <i
                                 class="fa-solid fa-cart-shopping bg-transparent hover:text-blue-500 dark:text-white text-black"></i>
                         </a>
                         <!-- DropDown -->
@@ -68,10 +72,11 @@
                             <!-- Dropdown Menu -->
                             <div id="dropdownUser"
                                 class="z-50 hidden w-64 rounded-xl shadow-lg bg-black text-white p-4 space-y-4 font-medium text-lg backdrop-blur-md">
-                                <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
+                                <a href="../userProfile/index.html"
+                                    class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
                                     <i class="fas fa-user text-xl"></i>
                                     <span>Manage My Account</span>
-                                </div>
+                                </a>
                                 <div class="flex items-center gap-4 hover:opacity-90 cursor-pointer">
                                     <i class="fas fa-bag-shopping text-xl"></i>
                                     <span>My Order</span>
@@ -141,19 +146,286 @@
                 </div>
             </div>
         </nav>
-        <div class="navigation">
-            <a href="../index.html" class="text-gray-600">Home</a>/
-            <a href="./index.html">About</a>
+        <div class="mt-8 ml-8">
+            <a href="/index.html" class="text-gray-400">Home </a>/
+            <a href="" class=""> About</a>
         </div>
-        <div class="content">
-            <div>
+        <div class="container mx-auto px-4 py-4">
+            <section class="max-w-7xl mx-auto px-6 py-16 flex flex-col lg:flex-row items-center gap-10">
+                <div class="lg:w-1/2">
+                    <h2 class="text-4xl font-semibold mb-6">Our Story</h2>
+                    <p class="text-gray-700 mb-4">
+                        Launched in 2015, Exclusive is South Asia’s premier online shopping marketplace with an active
+                        presence in Bangladesh. Supported by wide range of tailored marketing, data and service
+                        solutions, Exclusive has 10,500 sellers and 300 brands and serves 3 million customers across the
+                        region.
+                    </p>
+                    <p class="text-gray-700">
+                        Exclusive has more than 1 Million products to offer, growing at a very fast pace. Exclusive
+                        offers a diverse assortment in categories ranging from consumer.
+                    </p>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="../assets/Side Image.png" alt="Our Story" class="rounded-xl w-full object-cover" />
+                </div>
+            </section>
+            <div class="grid grid-cols-2 gap-4 lg:grid-cols-4 ">
+                <div
+                    class="border border-gray-400 flex-1 rounded cursor-pointer hover:bg-[#DB4444] hover:text-white hover:shadow-lg px-8 py-4 flex flex-col gap-2 items-center">
+                    <div
+                        class="bg-black rounded-full w-16 h-16 border-6 border-gray-400 flex justify-center items-center">
+                        <img src="../assets/icon_shop.png" class="w-8 h-8" alt="">
 
+                    </div>
+                    <p class="font-bold text-2xl">33k</p>
+                    <p class="text-sm">Monthly Product Sale</p>
+                </div>
+                <div
+                    class="border border-gray-400 flex-1 rounded cursor-pointer hover:bg-[#DB4444] hover:text-white hover:shadow-lg px-8 py-4 flex flex-col gap-2 items-center">
+                    <div
+                        class="bg-black rounded-full w-16 h-16 border-6 border-gray-400 flex justify-center items-center">
+                        <img src="../assets/icon_shop.png" class="w-8 h-8" alt="">
+
+                    </div>
+                    <p class="font-bold text-2xl">10.5k</p>
+                    <p class="text-sm">Sallers active our site</p>
+                </div>
+                <div
+                    class="border border-gray-400 flex-1 rounded cursor-pointer hover:bg-[#DB4444] hover:text-white hover:shadow-lg px-8 py-4 flex flex-col gap-2 items-center">
+                    <div
+                        class="bg-black rounded-full w-16 h-16 border-6 border-gray-400 flex justify-center items-center">
+                        <img src="../assets/icon_shop.png" class="w-8 h-8" alt="">
+
+                    </div>
+                    <p class="font-bold text-2xl">10.5k</p>
+                    <p class="text-sm">Sallers active our site</p>
+                </div>
+                <div
+                    class="border border-gray-400 flex-1 rounded cursor-pointer hover:bg-[#DB4444] hover:text-white hover:shadow-lg px-8 py-4 flex flex-col gap-2 items-center">
+                    <div
+                        class="bg-black rounded-full w-16 h-16 border-6 border-gray-400 flex justify-center items-center">
+                        <img src="../assets/icon_shop.png" class="w-8 h-8" alt="">
+
+                    </div>
+                    <p class="font-bold text-2xl">45.5k</p>
+                    <p class="text-sm">Customer active in our site</p>
+                </div>
+            </div>
+            <section class="max-w-7xl mx-auto px-4 py-16">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Slide 1 -->
+                        <div class="swiper-slide flex justify-center">
+                            <div class="p-6 w-[280px]">
+                                <div class="bg-[#F5F5F5] px-8 pt-4 rounded">
+                                    <img src="../assets/image 46.png" alt="Tom Cruise"
+                                        class="object-cover rounded-md mx-auto mb-6" />
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold">Tom Cruise</h3>
+                                    <p class="text-gray-500 text-sm">Founder and Chairman</p>
+                                    <div class="flex mt-2 space-x-4 text-gray-600 text-xl">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="swiper-slide flex justify-center">
+                            <div class="p-6 w-[280px]">
+                                <div class="bg-[#F5F5F5] px-8 pt-4 rounded h-[300px]">
+                                    <img src="../assets/image 47.png" alt=""
+                                        class="object-cover rounded-md mx-auto mb-6" />
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold">Emma Watson</h3>
+                                    <p class="text-gray-500 text-sm">Managing Director</p>
+                                    <div class="flex mt-2 space-x-4 text-gray-600 text-xl">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <div class="p-6 w-[280px]">
+                                <div class="bg-[#F5F5F5] px-8 pt-4 rounded h-[300px]">
+                                    <img src="../assets/image 47.png" alt=""
+                                        class="object-cover rounded-md mx-auto mb-6" />
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold">Emma Watson</h3>
+                                    <p class="text-gray-500 text-sm">Managing Director</p>
+                                    <div class="flex mt-2 space-x-4 text-gray-600 text-xl">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide flex justify-center">
+                            <div class="p-6 w-[280px]">
+                                <div class="bg-[#F5F5F5] px-8 pt-4 rounded h-[300px]">
+                                    <img src="../assets/image 47.png" alt=""
+                                        class="object-cover rounded-md mx-auto mb-6" />
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold">Emma Watson</h3>
+                                    <p class="text-gray-500 text-sm">Managing Director</p>
+                                    <div class="flex mt-2 space-x-4 text-gray-600 text-xl">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="swiper-slide flex justify-center">
+                            <div class="p-6 w-[280px]">
+                                <div class="bg-[#F5F5F5] px-8 pt-4 rounded">
+                                    <img src="../assets/image 46.png" alt="Tom Cruise"
+                                        class="object-cover rounded-md mx-auto mb-6" />
+                                </div>
+                                <div>
+                                    <h3 class="text-2xl font-semibold">Tom Cruise</h3>
+                                    <p class="text-gray-500 text-sm">Founder and Chairman</p>
+                                    <div class="flex mt-2 space-x-4 text-gray-600 text-xl">
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fab fa-instagram"></i></a>
+                                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="swiper-pagination mt-10"></div>
+                </div>
+            </section>
+            <div>
+                <div
+                    class="max-w-7xl mx-auto px-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8 text-center">
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-16 h-16 bg-black border-[#c1c0c1] border-[10px] rounded-full flex items-center justify-center shadow-lg relative z-10">
+                            <img src="../assets/icon-delivery.png" alt="Delivery Icon" class="w-6 h-6 text-white">
+                        </div>
+                        <h3 class="mt-4 text-md font-bold uppercase">Free and Fast Delivery</h3>
+                        <p class="text-sm text-gray-600 mt-1">Free delivery for all orders over $140</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-16 h-16 bg-black border-[#c1c0c1] border-[10px]  rounded-full flex items-center justify-center shadow-lg relative z-10">
+                            <img src="../assets/Icon-Customer service.png" alt="Customer Support Icon"
+                                class="w-6 h-6 text-white">
+                        </div>
+                        <h3 class="mt-4 text-md font-bold uppercase">24/7 Customer Service</h3>
+                        <p class="text-sm text-gray-600 mt-1">Friendly 24/7 customer support</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <div
+                            class="w-16 h-16 bg-black border-[#c1c0c1] border-[10px] rounded-full flex items-center justify-center shadow-lg relative z-10">
+                            <img src="../assets/Icon-secure.png" alt="Money Back Icon" class="w-6 h-6 text-white">
+                        </div>
+                        <h3 class="mt-4 text-md font-bold uppercase">Money Back Guarantee</h3>
+                        <p class="text-sm text-gray-600 mt-1">We return money within 30 days</p>
+                    </div>
+                </div>
             </div>
         </div>
+        <footer class="bg-black text-white px-6 py-12 font-sans mt-12">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8">
+                <!-- Exclusive -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Exclusive</h2>
+                    <p class="mb-2 text-sm font-medium">Subscribe</p>
+                    <p class="text-xs mb-4">Get 10% off your first order</p>
+                    <form class="flex items-center border border-gray-500 rounded overflow-hidden">
+                        <input type="email" placeholder="Enter your email"
+                            class="w-full px-3 py-2 text-sm bg-transparent border-none outline-none text-white" />
+                        <button class="border-none cursor-pointer text-white px-3 py-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 12h14m-7-7l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Support</h2>
+                    <p class="text-xs leading-6">111 Bijoy sarani, Dhaka, DH 1515, Bangladesh.</p>
+                    <p class="text-xs mt-2">exclusive@gmail.com</p>
+                    <p class="text-xs mt-2">+88015-88888-9999</p>
+                </div>
+
+                <!-- Account -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Account</h2>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:underline">My Account</a></li>
+                        <li><a href="#" class="hover:underline">Login / Register</a></li>
+                        <li><a href="#" class="hover:underline">Cart</a></li>
+                        <li><a href="#" class="hover:underline">Wishlist</a></li>
+                        <li><a href="#" class="hover:underline">Shop</a></li>
+                    </ul>
+                </div>
+
+                <!-- Quick Link -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Quick Link</h2>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#" class="hover:underline">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:underline">Terms Of Use</a></li>
+                        <li><a href="#" class="hover:underline">FAQ</a></li>
+                        <li><a href="#" class="hover:underline">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Download App -->
+                <div>
+                    <h2 class="text-lg font-semibold mb-4">Download App</h2>
+                    <p class="text-xs mb-2">Save $3 with App New User Only</p>
+                    <div class="flex gap-3 items-start">
+                        <img src="../assets/Qr Code.png" alt="QR Code" class="w-16 h-16 object-cover">
+                        <div class="flex flex-col gap-2">
+                            <img src="../assets/GooglePlay.png" alt="Google Play" class="w-24">
+                            <img src="../assets/AppStore.png" alt="App Store" class="w-24">
+                        </div>
+                    </div>
+                    <div class="flex gap-4 mt-6 text-lg">
+                        <a href="#"><i class="fab fa-facebook-f hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-twitter hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-instagram hover:text-gray-400"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in hover:text-gray-400"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+                © Made by <a href="https://github.com/abdulmoiz34" class="text-white hover:underline">Abdul Moiz</a>
+            </div>
+        </footer>
     </main>
-
-
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Flowbite JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <!-- Firebase JS -->
+    <script src="../firebase/firebase.js" type="module"></script>
+    <!-- Notyf JS -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>
