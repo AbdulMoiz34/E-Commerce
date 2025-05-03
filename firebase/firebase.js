@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -28,7 +28,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-const db = getFirestore(app);
+export const db = getFirestore(app);
 
 // sign up functionality
 const signUp = async (name, email, password) => {
@@ -152,7 +152,7 @@ const updateEmailFirebase = async (email) => {
 }
 
 // update password functionality
-const updatePasswordFirebase = async(newPassword) => {
+const updatePasswordFirebase = async (newPassword) => {
     try {
         await updatePassword(auth.currentUser, newPassword);
         return "Password updated successfully";
@@ -160,4 +160,27 @@ const updatePasswordFirebase = async(newPassword) => {
         throw err;
     }
 }
-export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getSalesProducts, verifyEmail, updateUsername, updateEmailFirebase, updatePasswordFirebase };
+
+// firebase admin login handler
+const adminLoginHandler = async () => {
+    try {
+        const adminRef = doc(db, "admin", "CS5mqnMCWYzflnexVCVR");
+        const adminSnap = await getDoc(adminRef);
+        return adminSnap.data();
+    } catch (err) {
+        throw err;
+    }
+}
+
+
+// add product handler in admin
+const addProductHandler = async (product) => {
+    try {
+        await addDoc(collection(db, "products"), { ...product, createdAt: serverTimestamp() });
+        return "Product added successfully";
+    } catch (err) {
+        throw err;
+    }
+}
+
+export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getSalesProducts, verifyEmail, updateUsername, updateEmailFirebase, updatePasswordFirebase, adminLoginHandler, addProductHandler };

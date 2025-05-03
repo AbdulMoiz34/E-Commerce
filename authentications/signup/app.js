@@ -43,7 +43,7 @@ const signUpHandler = async (e) => {
         notyfInfo("Loading...");
         await signUp(username, email, password);
         notyfInfo("Signup successful");
-        setTimeout(() => location = "../login/index.html", 1000);
+        setTimeout(() => location = "../../index.html", 1000);
     } catch (err) {
         notyfError(err.message);
     }

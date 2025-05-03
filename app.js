@@ -44,10 +44,10 @@ const categorySwiper = new Swiper('.category-swiper', {
     slidesPerView: 5,
     spaceBetween: 20,
     breakpoints: {
-        320: { slidesPerView: 2 },   // Mobile
-        640: { slidesPerView: 3 },   // Small screens
-        768: { slidesPerView: 4 },   // Medium screens
-        1024: { slidesPerView: 5 }   // Large screens and up
+        320: { slidesPerView: 2 },
+        640: { slidesPerView: 3 },
+        768: { slidesPerView: 4 },
+        1024: { slidesPerView: 5 }
     }
 });
 
@@ -109,8 +109,6 @@ salesProducts();
 // Searching functionality 
 
 const searchInput = document.getElementById("search-navbar");
-
-
 searchInput.addEventListener("keypress", e => {
     if (e.key == "Enter") {
         location = `./catalog/index.html?q=${searchInput.value}`;
