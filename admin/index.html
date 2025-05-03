@@ -14,8 +14,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <!-- Notyf CSS-->
-         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+    <!-- Notyf CSS-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
 </head>
 
 <body>
@@ -42,7 +42,7 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex flex-col items-center sm:flex-row justify-between gap-4">
                 <p class="font-bold text-3xl ">Products</p>
-                <p class="mt-2">All <span class="text-gray-700 font-medium text-sm">(137)</span></p>
+                <p class="mt-2">All <span class="text-gray-700 font-medium text-sm" id="total-products">Loading...</span></p>
             </div>
             <!-- search product -->
             <div class="mt-4 flex flex-col items-center sm:flex-row justify-between gap-4">
@@ -61,7 +61,7 @@
                             placeholder="Search Products" required />
                     </div>
                 </form>
-                <button data-modal-target="defaultModal" data-modal-toggle="defaultModal"
+                <button data-modal-target="product-modal" data-modal-toggle="product-modal"
                     class="cursor-pointer bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-200 text-white text-sm py-2 px-5 rounded">
                     <i class="fa-solid fa-plus"></i>
                     <span>Add Product</span>
@@ -80,12 +80,11 @@
                             <th class="p-4"></th>
                         </tr>
                     </thead>
-                    <tbody id="products-list" class="text-sm text-gray-800 divide-y divide-gray-100">
-                    </tbody>
+                    <tbody id="products-list" class="text-sm text-gray-800 divide-y divide-gray-100"></tbody>
                 </table>
             </div>
-            <!-- Main modal for add product -->
-            <div id="defaultModal" tabindex="-1" aria-hidden="true"
+            <!-- Main modal for add/edit product -->
+            <div id="product-modal" tabindex="-1" aria-hidden="true"
                 class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-modal md:h-full">
                 <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
                     <!-- Modal content -->
@@ -93,12 +92,12 @@
                         <!-- Modal header -->
                         <div
                             class="flex justify-between items-center pb-4 mb-4 rounded-t border-b sm:mb-5 dark:border-gray-600">
-                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            <h3 id="modal-title" class="text-lg font-semibold text-gray-900 dark:text-white">
                                 Add Product
                             </h3>
-                            <button type="button"
+                            <button id="toggle-modal" type="button"
                                 class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                data-modal-toggle="defaultModal">
+                                data-modal-toggle="product-modal">
                                 <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd"
@@ -140,8 +139,14 @@
                                         <option selected="">Select category</option>
                                         <option value="TV">TV/Monitors</option>
                                         <option value="PC">PC</option>
-                                        <option value="GA">Gaming/Console</option>
+                                        <option value="GA">Gaming</option>
                                         <option value="PH">Phones</option>
+                                        <option value="AC">Air Conditioners</option>
+                                        <option value="HA">Home Appliances</option>
+                                        <option value="CL">Clothes</option>
+                                        <option value="SH">Shoes</option>
+                                        <option value="BE">Beauty</option>
+                                        <option value="OT">Others</option>
                                     </select>
                                 </div>
                                 <div class="sm:col-span-2">
@@ -160,7 +165,7 @@
 
                                 </div>
                             </div>
-                            <button type="submit"
+                            <button id="modal-submit-btn" type="submit"
                                 class="text-white inline-flex items-center font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-black cursor-pointer">
                                 <svg class="mr-1 -ml-1 w-6 h-6" fill="currentColor" viewBox="0 0 20 20"
                                     xmlns="http://www.w3.org/2000/svg">
@@ -178,11 +183,11 @@
     </div>
 
 
-    <script type="module" src="app.js"></script>
     <!-- Flowbit JS -->
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
     <!-- Notyf JS-->
-     <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 
 </html>

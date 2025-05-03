@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, getDocs, doc, getDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, doc, getDoc, serverTimestamp, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -96,12 +96,22 @@ const getAllProducts = async () => {
         const querySnapshot = await getDocs(collection(db, "products"));
         const products = [];
         querySnapshot.forEach((doc) => {
-            products.push(doc.data());
+            products.push({ ...doc.data(), id: doc.id });
         });
         return products;
     } catch (error) {
-        console.error("Error getting products: ", error);
-        return [];
+        throw error;
+    }
+};
+
+// get a product by id
+const getProductById = async (id) => {
+    try {
+        const docRef = doc(db, "products", id);
+        const docSnap = await getDoc(docRef);
+        return docSnap.data();
+    } catch (err) {
+        throw err;
     }
 };
 
@@ -115,7 +125,7 @@ const getSalesProducts = async () => {
         });
         return products;;
     } catch (err) {
-        console.log(err);
+        throw err;
     }
 }
 
@@ -183,4 +193,24 @@ const addProductHandler = async (product) => {
     }
 }
 
-export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getSalesProducts, verifyEmail, updateUsername, updateEmailFirebase, updatePasswordFirebase, adminLoginHandler, addProductHandler };
+// delete product handler in admin
+const deleteProductHandler = async (id) => {
+    try {
+        await deleteDoc(doc(db, "products", id));
+        return "Product deleted successfully";
+    } catch (err) {
+        throw err;
+    }
+}
+
+// update product handler in admin
+const updateProductHandler = async (id, product) => {
+    try {
+        await updateDoc(doc(db, "products", id), product);
+        return "Product updated successfully";
+    } catch (err) {
+        throw err;
+    }
+}
+
+export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getProductById, getSalesProducts, verifyEmail, updateUsername, updateEmailFirebase, updatePasswordFirebase, adminLoginHandler, addProductHandler, deleteProductHandler, updateProductHandler };
