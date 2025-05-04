@@ -70,7 +70,6 @@ const getAllProductsHandler = async () => {
         for (const product of products) {
             tableRows += `
                 <tr class="hover:bg-gray-50">
-                    <td class="p-4"><input type="checkbox" class="form-checkbox" /></td>
                     <td class="flex items-center gap-4 p-4">
                         <img src="${product.image}" class="w-12 h-12 rounded" alt="${product.name}" />
                         <span class="font-medium text-blue-600">${product.name}</span>
