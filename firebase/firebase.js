@@ -109,7 +109,7 @@ const getProductById = async (id) => {
     try {
         const docRef = doc(db, "products", id);
         const docSnap = await getDoc(docRef);
-        return docSnap.data();
+        return { ...docSnap.data(), id: docSnap.id };
     } catch (err) {
         throw err;
     }
@@ -205,6 +205,7 @@ const deleteProductHandler = async (id) => {
 
 // update product handler in admin
 const updateProductHandler = async (id, product) => {
+    console.log(product);
     try {
         await updateDoc(doc(db, "products", id), product);
         return "Product updated successfully";

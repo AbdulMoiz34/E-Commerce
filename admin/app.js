@@ -1,4 +1,4 @@
-import { getAllProducts, addProductHandler as addProduct, deleteProductHandler as deleteProduct, getProductById } from "../firebase/firebase.js";
+import { getAllProducts, addProductHandler as addProduct, deleteProductHandler as deleteProduct, getProductById, updateProductHandler as updateProduct } from "../firebase/firebase.js";
 import { notyfSuccess, notyfError } from "../notyf/app.js";
 
 const logoutBtn = document.getElementById("logout-btn");
@@ -27,14 +27,14 @@ const uploadImage = async (file) => {
 }
 
 const addProductHandler = async () => {
-    event.preventDefault();
-    addProductForm.querySelector("button[type='submit']").textContent = "Uploading...";
     const name = document.getElementById("name").value;
     const brand = document.getElementById("brand").value;
     const price = document.getElementById("price").value;
     const category = document.getElementById("category").value;
     const description = document.getElementById("description").value;
     const image = document.getElementById("file_input").files[0];
+    document.getElementById("toggle-modal").click();
+    productsList.innerHTML = "<tr><td colspan='7' class='p-4 text-center text-lg'>Loading...</td></tr>";
     try {
         const imageUrl = await uploadImage(image);
         const product = {
@@ -48,7 +48,8 @@ const addProductHandler = async () => {
         }
         const msg = await addProduct(product);
         notyfSuccess(msg);
-        location.reload();
+        getAllProductsHandler();
+        addProductForm.reset();
     } catch (err) {
         notyfError(err.message);
     }
@@ -98,7 +99,7 @@ const getAllProductsHandler = async () => {
         // add event listeners to edit buttons
         document.querySelectorAll('#editProduct').forEach(btn => {
             btn.addEventListener('click', () => {
-                editProductHandler(btn.getAttribute('data-id'));
+                updateProductHandler(btn.getAttribute('data-id'));
             });
         });
 
@@ -120,30 +121,67 @@ const deleteProductHandler = async (id) => {
     }
 }
 
-const editProductHandler = async (id) => {
-    document.getElementById("modal-title").textContent = "Edit Product";
-    document.getElementById("modal-submit-btn").textContent = "Update Product";
-    const btn = document.getElementById("toggle-modal");
-    const name = document.getElementById("name")
-    const brand = document.getElementById("brand");
-    const price = document.getElementById("price");
-    const category = document.getElementById("category");
-    const description = document.getElementById("description");
-    btn.click();
-    try {
-        const product = await getProductById(id);
-        name.value = product.name;
-        brand.value = product.brand;
-        price.value = product.price;
-        category.value = product.category;
-        description.value = product.description;
-        console.log(product);
 
+// edit product handler
+const name = document.getElementById("name");
+const brand = document.getElementById("brand");
+const price = document.getElementById("price");
+const category = document.getElementById("category");
+const description = document.getElementById("description");
+const image = document.getElementById("file_input");
+const submitBtn = document.getElementById("modal-submit-btn");
+let currentProduct = undefined;
+const toggleModal = document.getElementById("toggle-modal");
+
+const updateProductHandler = async (id) => {
+    toggleModal.click();
+    document.getElementById("modal-title").textContent = "Edit Product";
+    submitBtn.textContent = "Update Product";
+    if (id != null) {
+        try {
+            currentProduct = await getProductById(id);
+        } catch (err) {
+            notyfError(err.message);
+        }
+        name.value = currentProduct.name;
+        brand.value = currentProduct.brand;
+        price.value = currentProduct.price;
+        category.value = currentProduct.category;
+        description.value = currentProduct.description;
+        image.removeAttribute("required");
+    } else {
+        productsList.innerHTML = "<tr><td colspan='7' class='p-4 text-center text-lg'>Loading...</td></tr>";
+        try {
+            await updateProductSubmitHandler(currentProduct);
+            await getAllProductsHandler();
+        } catch (err) {
+            notyfError(err.message);
+        }
+    }
+}
+
+
+const updateProductSubmitHandler = async (product) => {
+    const updatedProduct = {
+        name: name.value,
+        brand: brand.value,
+        price: price.value,
+        category: category.value,
+        description: description.value
+    };
+    const img = image.files[0];
+    if (img) {
+        const imageUrl = await uploadImage(img);
+        updatedProduct.image = imageUrl;
+    }
+    try {
+        const msg = await updateProduct(product.id, { ...product, ...updatedProduct });
+        notyfSuccess(msg);
+        addProductForm.reset();
     } catch (err) {
+        console.log(err);
         notyfError(err.message);
     }
-
-    console.log("clicked");
 }
 
 const displayTime = (timeStamp) => {
@@ -163,10 +201,18 @@ logoutBtn.addEventListener("click", () => {
     setTimeout(() => location = "login/index.html", 1000);
 });
 
-addProductForm.addEventListener("submit", () => {
-    const submitBtn = document.getElementById("modal-submit-btn");
+document.getElementById("add-product-btn").addEventListener("click", () => {
+    console.log("Clicked");
+    document.getElementById("modal-title").textContent = "Add Product";
+    submitBtn.textContent = "Add Product";
+    image.setAttribute("required", true);
+    addProductForm.reset();
+});
+
+addProductForm.addEventListener("submit", (event) => {
+    event.preventDefault();
     if (submitBtn.textContent === "Update Product") {
-        editProductHandler();
+        updateProductHandler(null);
     } else {
         addProductHandler();
     }
