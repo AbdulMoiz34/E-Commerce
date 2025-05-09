@@ -33,6 +33,7 @@ const addProductHandler = async () => {
     const category = document.getElementById("category").value;
     const description = document.getElementById("description").value;
     const image = document.getElementById("file_input").files[0];
+    console.log(image);
     document.getElementById("toggle-modal").click();
     productsList.innerHTML = "<tr><td colspan='7' class='p-4 text-center text-lg'>Loading...</td></tr>";
     try {
@@ -51,6 +52,7 @@ const addProductHandler = async () => {
         getAllProductsHandler();
         addProductForm.reset();
     } catch (err) {
+        console.log(err);
         notyfError(err.message);
     }
 }

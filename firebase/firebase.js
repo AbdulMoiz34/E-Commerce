@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
-import { getFirestore, collection, addDoc, getDocs, doc, getDoc, serverTimestamp, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+import { getFirestore, collection, query, limit, addDoc, getDocs, doc, getDoc, serverTimestamp, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
 import {
     getAuth,
     createUserWithEmailAndPassword,
@@ -103,6 +103,22 @@ const getAllProducts = async () => {
         throw error;
     }
 };
+
+
+// get ten products
+const getProductsByLimit = async (lim) => {
+    try {
+        const first = query(collection(db, "products"), limit(lim));
+        const documentSnapshots = await getDocs(first);
+        const products = [];
+        documentSnapshots.forEach(doc => {
+            products.push({ ...doc.data(), id: doc.id });
+        })
+        return products;
+    } catch (error) {
+        throw error;
+    }
+}
 
 // get a product by id
 const getProductById = async (id) => {
@@ -214,4 +230,4 @@ const updateProductHandler = async (id, product) => {
     }
 }
 
-export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getProductById, getSalesProducts, verifyEmail, updateUsername, updateEmailFirebase, updatePasswordFirebase, adminLoginHandler, addProductHandler, deleteProductHandler, updateProductHandler };
+export { app, analytics, signUp, signIn, logout, signInWithGoogle, getCurrentUser, auth, getAllProducts, getProductById, getSalesProducts, verifyEmail, updateUsername, updateEmailFirebase, updatePasswordFirebase, adminLoginHandler, addProductHandler, deleteProductHandler, updateProductHandler, getProductsByLimit };
